@@ -1,0 +1,19 @@
+
+
+
+
+
+
+
+
+ //    if( title!="" && title !=null) title = cnkiClean.cleanTitle( title)
+    //    if( creator!="" && creator !=null) creator = cnkiClean.getFirstCreator(cnkiClean.cleanAuthor(creator))
+    //    if(creatorAlt !="" && creatorAlt !=null) creatorAlt = cnkiClean.cleanAuthor(creatorAlt)
+    //    if(creatorAll !="" && creatorAll !=null) creatorAll = cnkiClean.cleanAuthor(creatorAll)
+    //    if(keyWord !="" && keyWord !=null) keyWord = cnkiClean.cleanKeyWord(keyWord)
+    //    if(keyWordAlt !="" && keyWordAlt !=null) keyWordAlt = cnkiClean.cleanKeyWord(keyWordAlt)
+    //    if( instituteAll!="" && instituteAll !=null) instituteAll = cnkiClean.cleanInstitute(instituteAll)
+    //    if( journal!="" && journal !=null) journal = cnkiClean.cleanJournal(journal)
+    //    if( institute!="" && institute !=null) institute = cnkiClean.getFirstInstitute(cnkiClean.cleanInstitute(institute))
+    //    if(abstractcont !="" && abstractcont !=null) abstractcont = cnkiClean.getChineseAbstract(abstractcont)
+    //    if(abstractcont_alt !="" && abstractcont_alt !=null) abstractcont_alt = cnkiClean.getEnglishAbstract(abstractcont_alt)

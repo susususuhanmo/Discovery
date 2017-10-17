@@ -1,0 +1,166 @@
+﻿id, 
+title,
+titleAlt,
+creator,
+creatorAlt,
+creatorAll,
+keyword,
+keywordAlt,
+institute,
+instituteAll,
+year,
+journal,
+issue,
+url,
+isCore,
+operater,
+otherId,
+volume,
+page
+datasource
+
+
+rdd_kafka_result_notmatch
+(
+	ECB71BCD-B42C-E711-AECF-0050569B7A51,																f._1
+	(																																		f._2
+		经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,							f._2._1
+		中国矫形外科杂志,																								 	 f._2._2
+		郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																	f._2._3
+		ECB71BCD-B42C-E711-AECF-0050569B7A51,															f._2._4
+	)	
+)
+
+rdd_kafka_newdata_source        【rdd_kafka_source.join(rdd_kafka_result_notmatch)】
+(
+	ECB71BCD-B42C-E711-AECF-0050569B7A51,																f._1
+	(																																		f._2
+		(																																	f._2._1
+			ECB71BCD-B42C-E711-AECF-0050569B7A51,														f._2._1._1
+			经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的 疗效分析,					f._2._1._2
+			,																																f._2._1._3
+			郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																f._2._1._4
+			,																																f._2._1._5
+			郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																f._2._1._6
+			腰椎间盘突出症;椎间孔镜;髓核摘除术;高龄,														f._2._1._7
+			@@,																															f._2._1._8
+			,																																f._2._1._9
+			,																																f._2._1._10
+			2016,																														f._2._1._11
+			ISTICPKU,																												f._2._1._12
+			2016 24(23),																										f._2._1._13
+			http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx		f._2._1._14
+			http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx		f._2._1._15    //abstract
+			http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx		f._2._1._16			//abstract_alt
+		),
+		(																																	f._2._2
+			经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,						f._2._2._1
+			中国矫形外科杂志,																								 f._2._2._2
+			郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																f._2._2._3
+			ECB71BCD-B42C-E711-AECF-0050569B7A51,														f._2._2._4
+		)	
+	)
+)
+
+rdd_kafka__newdata_source_insert_map 
+(
+	ISTICPKU,
+	(
+		ECB71BCD-B42C-E711-AECF-0050569B7A51,
+		经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,
+		,
+		郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,
+		,
+		郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,
+		腰椎间盘突出症;椎间孔镜;髓核摘除术;高龄,
+		@@,
+		,
+		,
+		2016,
+		ISTICPKU,
+		2016 24(23),
+		http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx,
+		(
+		 	经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,
+		 	中国矫形外科杂志,
+		 	郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,
+		 	ECB71BCD-B42C-E711-AECF-0050569B7A51,
+		)
+	)
+)
+
+
+rdd_kafka_newdata_source_imsert_map2   (join with courjournal)
+(
+	ISTICPKU,  																													f._1
+	(					 																													f._2
+		(				 																													f._2._1
+			ECB71BCD-B42C-E711-AECF-0050569B7A51,   												f._2._1._1
+			经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,    				f._2._1._2
+			,   																														f._2._1._3
+			郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,   														f._2._1._4
+			,    																														f._2._1._5
+			郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																f._2._1._6
+			腰椎间盘突出症;椎间孔镜;髓核摘除术;高龄,														f._2._1._7
+			@@,																															f._2._1._8
+			,																																f._2._1._9
+			,																																f._2._1._10
+			2016,																														f._2._1._11
+			ISTICPKU,																												f._2._1._12
+			2016 24(23),																										f._2._1._13
+			http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx		f._2._1._14
+			http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx		f._2._1._15    //abstract
+			http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx		f._2._1._16			//abstract_alt
+			(																																f._2._1._17
+			 	经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,					f._2._1._17._1
+			 	中国矫形外科杂志,																							 f._2._1._17._2
+			 	郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,															f._2._1._17._3
+			 	ECB71BCD-B42C-E711-AECF-0050569B7A51,													f._2._1._17._4
+			)
+		),
+		(       																													f._2._2
+			计算机学报																											  f._2._2.1
+		)
+	)
+)
+
+
+rdd_kafka_newdata_source_imsert_map3    (join with journalmag)
+(
+	ISTICPKU,     																														f._1 
+	(            																															f._2
+		(					 																															f._2._1
+			(				 																															f._2._1._1
+				ECB71BCD-B42C-E711-AECF-0050569B7A51,																f._2._1._1._1
+				经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,								f._2._1._1._2
+				,																																		f._2._1._1._3
+				郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																		f._2._1._1._4
+				,																																		f._2._1._1._5
+				郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																		f._2._1._1._6
+				腰椎间盘突出症;椎间孔镜;髓核摘除术;高龄,																f._2._1._1._7
+				@@,																																	f._2._1._1._8
+				,																																		f._2._1._1._9
+				,																																		f._2._1._1._10
+				2016,																																f._2._1._1._11
+				ISTICPKU,																														f._2._1._1._12
+			  2016 24(23),																												f._2._1._1._13
+			  http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx				f._2._1._1._14
+			  http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx				f._2._1._1._15    //abstract
+				http://d.wanfangdata.com.cn/Periodical_zgjxwkzz201623016.aspx				f._2._1._1._16			//abstract_alt
+				(																																		f._2._1._1._17
+				 	经皮椎间孔镜下髓核摘除术治疗老年腰椎间盘突出症的疗效分析,							f._2._1._1._17._1
+				 	中国矫形外科杂志,																									 f._2._1._1._17._2
+				 	郑振阳|!孙兆忠|!郑建民|!石琪|!李瑞,																	f._2._1._1._17._3
+				 	ECB71BCD-B42C-E711-AECF-0050569B7A51,															f._2._1._1._17._4
+				)
+			),
+			(																																			f._2._1._2
+				计算机学报																														f._2._1._2._1
+			)
+		),
+		(																																				f._2._2
+			xsxxxxx,																															f._2._2._1
+			CFRTED																																f._2._2._2
+		)
+	)
+)
