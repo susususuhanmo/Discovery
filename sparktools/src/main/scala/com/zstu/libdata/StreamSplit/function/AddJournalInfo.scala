@@ -1,9 +1,8 @@
-package com.zstu.libdata.StreamSplit.test
-
+package com.zstu.libdata.StreamSplit.function
 
 import java.io.PrintWriter
 
-import com.zstu.libdata.StreamSplit.function.deleteZero
+import com.zstu.libdata.StreamSplit.test.ParseUrl
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.hive.HiveContext
 import org.joda.time.DateTime

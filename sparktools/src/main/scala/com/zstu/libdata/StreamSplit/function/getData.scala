@@ -5,7 +5,7 @@ import com.zstu.libdata.StreamSplit.function.ReadData.readDataLog
 import com.zstu.libdata.StreamSplit.function.commonOps._
 import com.zstu.libdata.StreamSplit.kafka.{cnkiClean, commonClean}
 import com.zstu.libdata.StreamSplit.splitAuthor.getCLC.getCLCRdd
-import com.zstu.libdata.StreamSplit.test.AddJournalInfo
+import AddJournalInfo
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.hive.HiveContext
 import org.apache.spark.sql.{DataFrame, Row}

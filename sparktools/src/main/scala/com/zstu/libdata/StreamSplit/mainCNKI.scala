@@ -38,7 +38,7 @@ object mainCNKI {
       val orgjournaldata = commonClean.readDataOrg("t_CNKI_UPDATE", hiveContext)
         .filter("status != 2 and status != 3")
 //          .filter("id = 'cd8a0cd4-330e-e711-ac60-d8d385f7104f'")
-          .limit(500000)
+          .limit(1000000)
         .cache()
 
       orgjournaldata.registerTempTable("t_orgjournaldataCNKI")

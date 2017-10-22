@@ -2,7 +2,7 @@ package com.zstu.libdata.StreamSplit.function
 
 import com.zstu.libdata.StreamSplit.kafka.cnkiClean
 import com.zstu.libdata.StreamSplit.splitAuthor.splitAuthorFunction.splitRdd
-import com.zstu.libdata.StreamSplit.test.AddJournalInfo
+import AddJournalInfo
 import org.apache.spark.rdd.RDD
 import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.hive.HiveContext

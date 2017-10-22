@@ -95,7 +95,7 @@ case class journalCoreJudge(journalName: String,isCore: Int)
 
 
     val operateSourceData = hiveContext.createDataFrame(Array(operateAndSource(2,types)))
-    val resultData = noMatchFullData.join(operateSourceData)
+    val resultData = noMatchFullData.join(operateSourceData).filter("id != otherid")
 
 
     WriteData.writeData50("DiscoveryV3", "t_JournalLog", resultData)

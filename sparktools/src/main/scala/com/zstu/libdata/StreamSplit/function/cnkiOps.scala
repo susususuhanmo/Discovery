@@ -93,17 +93,22 @@ object cnkiOps {
     institution = institution.substring(0, institution.lastIndexOf(";"))
     institution
   }
-  def cleanInstitute(institute: String): String ={
-    def getStrBefore(str: String):String={
-      if(str == null) null
+  def cleanInstitute(institute: String): String = {
+    def getStrBefore(str: String): String = {
+      if (str == null) null
       else {
-        val rtn = str.replace("，",",").replace("|!",";")
-        if(rtn.indexOf(",") >=0) rtn.substring(0,rtn.indexOf(","))
-        else rtn
+        if (str.indexOf(",") >= 0) str.substring(0, str.indexOf(","))
+        else str
       }
     }
     if(institute == null) null
-    else splitStr(institute).map(getStrBefore(_).trim).reduce(_+";"+_)
+    else {
+      val rtn = institute.replace("，", ",").replace("|!", ";")
+        val rtnArray = splitStr(rtn).map(getStrBefore(_).trim).filter(s => s != "" && s != null)
+        if (rtnArray.isEmpty) null
+        else rtnArray.reduce(_ + ";" + _)
+    }
+
   }
 
   def getFirstInstitute(institute: String): String = {

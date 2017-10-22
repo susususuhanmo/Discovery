@@ -9,33 +9,29 @@ import com.zstu.libdata.StreamSplit.function.CommonTools.splitStr
 
 object test {
 
-  def cleanInstitute(institute: String): String ={
-    def getStrBefore(str: String):String={
-      if(str == null) null
-      else {
-        val rtn = str.replace("，",",")
-        println(rtn)
-        if(rtn.indexOf(",") >=0) {
-          println(rtn.indexOf(","))
-          rtn.substring(0,rtn.indexOf(","))
+  def cleanInstitute(institute: String): String = {
+    val rtn = institute.replace("，", ",").replace("|!", ";")
 
-        }
-        else rtn
+    def getStrBefore(str: String): String = {
+      if (str == null) null
+      else {
+        if (str.indexOf(",") >= 0) str.substring(0, str.indexOf(","))
+        else str
       }
     }
-    if(institute == null) null
-    else splitStr(institute).map(getStrBefore(_).trim).reduce(_+";"+_)
+
+    if (rtn == null) null
+    else {
+      val rtnArray = splitStr(rtn).map(getStrBefore(_).trim).filter(s => s != "" && s != null)
+      if (rtnArray.isEmpty) null
+      else rtnArray.reduce(_ + ";" + _)
+    }
   }
+
   def main(args: Array[String]): Unit = {
+    println(cleanInstitute(";;;"))
 
 
-    var subjectsCleaned = "fdsa;fdsa;"
-    if(subjectsCleaned(subjectsCleaned.length - 1) == ';'){
-      subjectsCleaned = subjectsCleaned.substring(0,subjectsCleaned.length -1)
-    }
-
-    print(subjectsCleaned)
-
-    }
+  }
 
 }

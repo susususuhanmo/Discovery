@@ -23,7 +23,10 @@ object commonOps {
 
     if (value._2.isEmpty)
       return false
+
     val data = value._2.get
+    if(value._1._4 == data._4)
+      return true
     if (getSimilarty(value._1._1, data._1, value._1._2, data._2, value._1._3, data._3) > 0.9) {
       //虽然key匹配度>0.9 ,但是只要year不同认为不匹配
       if(value._1._6 !="" && data._6 !="" && value._1._6 != data._6)

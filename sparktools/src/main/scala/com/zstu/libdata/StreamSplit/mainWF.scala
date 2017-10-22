@@ -31,7 +31,7 @@ object mainWF {
 
 
       val orgjournaldata = commonClean.readDataOrg("t_WF_UPDATE", hiveContext)
-        .filter("status != 2 and status != 3").limit(500000).cache()
+        .filter("status != 2 and status != 3").limit(1000000).cache()
       orgjournaldata.registerTempTable("t_orgjournaldataWF")
 
 

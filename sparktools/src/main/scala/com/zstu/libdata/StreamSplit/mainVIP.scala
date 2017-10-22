@@ -32,7 +32,7 @@ object mainVIP {
 
 
       val orgjournaldata = commonClean.readDataOrg("t_VIP_UPDATE", hiveContext)
-        .filter("status != 2 and status != 3").limit(500000).cache()
+        .filter("status != 2 and status != 3").limit(1000000).cache()
       orgjournaldata.registerTempTable("t_orgjournaldataVIP")
 
 
@@ -43,8 +43,7 @@ object mainVIP {
         distinctRdd.distinctInputRdd(orgjournaldata.map(f => commonClean.transformRdd_vip_simplify(f)))
 
 
-      WriteData.writeErrorData(repeatedRdd, types, hiveContext)
-      logUtil("重复数据写入" + repeatedRdd.count())
+
 
 
       // val simplifiedInputRdd =getSimplifiedInputRdd(CNKIData)
@@ -56,7 +55,7 @@ object mainVIP {
       val (rightInputRdd, errorRdd) = getRightRddAndReportError(simplifiedInputRdd, hiveContext)
       logUtil("正常数据" + rightInputRdd.count())
 
-      WriteData.writeErrorData(errorRdd, types, hiveContext)
+
 
 
       //开始查重 join group
@@ -87,6 +86,9 @@ object mainVIP {
       logUtil("匹配成功的旧数据处理成功" + num)
       val logData = hiveContext.sql("select GUID as id," + types + " as resource from t_orgjournaldataVIP")
       WriteData.writeDataWangzhihong("t_Log3", logData)
+      WriteData.writeErrorData(repeatedRdd, types, hiveContext)
+      WriteData.writeErrorData(errorRdd, types, hiveContext)
+      logUtil("重复数据写入" + repeatedRdd.count())
       logUtil("写入Log表" + logData.count())
       hiveContext.dropTempTable("t_orgjournaldataVIP")
     } catch {
